@@ -1,0 +1,23 @@
+---
+import S from "./Dialog.module.css";
+---
+
+<dialog id="dialog" class={S.dialog}></dialog>
+
+<script>
+  const dialog = document.getElementById("dialog");
+
+  // Escuchar eventos personalizados para abrir el modal
+  window.addEventListener("open-modal", (event) => {
+    const htmlContent = event.detail?.html || "";
+    dialog.innerHTML = htmlContent;
+    dialog.showModal();
+  });
+
+  // Cierre al hacer clic fuera del contenido
+  dialog?.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      dialog.close();
+    }
+  });
+</script>

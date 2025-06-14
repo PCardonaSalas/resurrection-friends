@@ -1,0 +1,36 @@
+---
+import S from "./Users.module.css";
+---
+
+<section id="usuarios-container" class={S.users}></section>
+
+<script type="module">
+  import { initFireBase, getOnce } from "../../utils/firebase.js";
+
+  const db = initFireBase();
+
+  const callback = (data) => {
+    const container = document.getElementById("usuarios-container");
+    container.innerHTML = "";
+
+    Object.values(data).forEach((usuario) => {
+      const img = document.createElement("img");
+      img.src = `/fotos/${usuario.nombre}.jpeg`;
+      img.alt = usuario.nombre;
+      img.id = usuario.nombre;
+      img.className = "user-avatar";
+
+      // 🖱️ Añadimos el manejador de click
+      img.addEventListener("click", () => {
+        localStorage.setItem("user", usuario.nombre);
+        window.location.href = "/wednesday";
+      });
+
+      const figure = document.createElement("figure");
+      figure.appendChild(img);
+      container.appendChild(figure);
+    });
+  };
+
+  getOnce(db, "usuario", callback);
+</script>

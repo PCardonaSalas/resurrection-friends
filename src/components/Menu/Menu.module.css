@@ -1,0 +1,28 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+._item {}
+
+._link {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    padding: 8px 12px;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 8px 12px;
+
+    &.-active {
+        --active-color: #d50000;
+        border-color: var(--active-color);
+
+        color: var(--active-color);
+    }
+
+}

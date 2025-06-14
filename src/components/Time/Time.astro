@@ -1,0 +1,7 @@
+---
+import S from "./Time.module.css";
+
+const { modifier, value } = Astro.props;
+---
+
+<div class=`${S.time} ${S[modifier]}`>{value}</div>

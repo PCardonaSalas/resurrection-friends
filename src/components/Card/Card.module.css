@@ -1,0 +1,54 @@
+.card {
+    button {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4px;
+        font-size: 12px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        color: white;
+        border: 0;
+    }
+
+    &.-main {
+        button {
+            background-color: #cd4803;
+        }
+    }
+
+    &.-ritual {
+        button {
+            background-color: #24756d;
+        }
+    }
+
+    &.-chaos {
+        button {
+            background-color: #ae1b58;
+        }
+    }
+
+    &.-desert {
+        button {
+            background-color: #c38500;
+        }
+    }
+
+    ._band {
+        color: white;
+        margin-block: 0;
+        font-size: 13px;
+    }
+
+    ._hours {
+        margin-block: 0;
+        color: white;
+        font-size: 11px;
+    }
+
+    .hidden {
+        display: none;
+    }
+}

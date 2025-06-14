@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-end: 12px;
+
+    ._image {
+        max-width: 300px;
+    }
+}

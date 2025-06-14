@@ -1,0 +1,778 @@
+{
+  "wednesday": [
+    {
+      "index": 1,
+      "start": "16:00",
+      "end": "16:40",
+      "band": "From Fall To Spring",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 2,
+      "start": "17:20",
+      "end": "18:05",
+      "band": "Signs of the Swarm",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 3,
+      "start": "18:50",
+      "end": "19:35",
+      "band": "Novelists",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 4,
+      "start": "20:25",
+      "end": "21:25",
+      "band": "Jinjer",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 5,
+      "start": "22:30",
+      "end": "00:00",
+      "band": "Judas Priest",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 6,
+      "start": "01:10",
+      "end": "02:20",
+      "band": "Kanonfieber",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 7,
+      "start": "16:40",
+      "end": "17:20",
+      "band": "Deimocracy",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 8,
+      "start": "18:05",
+      "end": "18:50",
+      "band": "Psilicon Flesh",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 9,
+      "start": "19:35",
+      "end": "20:25",
+      "band": "Lost Society",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 10,
+      "start": "21:25",
+      "end": "22:15",
+      "band": "Skynd",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 11,
+      "start": "00:00",
+      "end": "01:10",
+      "band": "Tarja",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 12,
+      "start": "16:35",
+      "end": "17:25",
+      "band": "letlive.",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 13,
+      "start": "18:05",
+      "end": "18:50",
+      "band": "Spy",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 14,
+      "start": "19:35",
+      "end": "20:25",
+      "band": "Paerish",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 15,
+      "start": "21:15",
+      "end": "22:00",
+      "band": "Terminal Sleep",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 16,
+      "start": "23:00",
+      "end": "00:00",
+      "band": "House of Protection",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 17,
+      "start": "01:10",
+      "end": "02:10",
+      "band": "Stick To Your Guns",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 18,
+      "start": "16:00",
+      "end": "16:35",
+      "band": "Mind Traveller",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 19,
+      "start": "17:20",
+      "end": "18:05",
+      "band": "Travo",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 20,
+      "start": "18:50",
+      "end": "19:35",
+      "band": "Årabrot",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 21,
+      "start": "20:25",
+      "end": "21:15",
+      "band": "The Southern River Band",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 22,
+      "start": "22:00",
+      "end": "23:00",
+      "band": "Eihwar",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 23,
+      "start": "00:00",
+      "end": "01:10",
+      "band": "Pentagram",
+      "stage": "desert",
+      "likes": []
+    }
+  ],
+  "thursday": [
+    {
+      "index": 24,
+      "start": "15:45",
+      "end": "16:25",
+      "band": "Stain The Canvas",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 25,
+      "start": "17:05",
+      "end": "17:55",
+      "band": "Northlane",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 26,
+      "start": "18:45",
+      "end": "19:35",
+      "band": "Seven Hours After Violet",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 27,
+      "start": "20:35",
+      "end": "22:05",
+      "band": "Till Lindemann",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 28,
+      "start": "23:30",
+      "end": "01:00",
+      "band": "KoRn",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 29,
+      "start": "15:05",
+      "end": "15:45",
+      "band": "Killus",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 30,
+      "start": "16:25",
+      "end": "17:05",
+      "band": "Vowws",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 31,
+      "start": "17:55",
+      "end": "18:45",
+      "band": "Death Angel",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 32,
+      "start": "19:35",
+      "end": "20:25",
+      "band": "Municipal Waste",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 33,
+      "start": "22:05",
+      "end": "23:15",
+      "band": "Heredeiros da Crus",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 34,
+      "start": "01:10",
+      "end": "02:20",
+      "band": "Hämatom",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 35,
+      "start": "15:45",
+      "end": "16:20",
+      "band": "Not Yet",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 36,
+      "start": "17:05",
+      "end": "17:55",
+      "band": "Empire of Disease",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 37,
+      "start": "18:45",
+      "end": "19:30",
+      "band": "Guilt Trip",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 38,
+      "start": "20:50",
+      "end": "21:50",
+      "band": "Cabal",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 39,
+      "start": "23:15",
+      "end": "00:15",
+      "band": "Evergreen Terrace",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 40,
+      "start": "01:10",
+      "end": "02:20",
+      "band": "Deez Nuts",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 41,
+      "start": "15:05",
+      "end": "15:40",
+      "band": "We All Fall",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 42,
+      "start": "16:20",
+      "end": "17:05",
+      "band": "SECRET SHOW",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 43,
+      "start": "17:55",
+      "end": "18:45",
+      "band": "Messa",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 44,
+      "start": "19:35",
+      "end": "20:35",
+      "band": "Conan",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 45,
+      "start": "22:05",
+      "end": "23:15",
+      "band": "El Altar del Holocausto",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 46,
+      "start": "23:55",
+      "end": "01:10",
+      "band": "Eagles of Death Metal",
+      "stage": "desert",
+      "likes": []
+    }
+  ],
+  "friday": [
+    {
+      "index": 47,
+      "start": "15:55",
+      "end": "16:25",
+      "band": "Broken By The Scream",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 48,
+      "start": "17:05",
+      "end": "17:50",
+      "band": "Deviloof",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 49,
+      "start": "18:40",
+      "end": "19:30",
+      "band": "Aphonnic",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 50,
+      "start": "20:30",
+      "end": "21:45",
+      "band": "Tesseract",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 51,
+      "start": "23:00",
+      "end": "00:15",
+      "band": "Falling In Reverse",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 52,
+      "start": "01:20",
+      "end": "02:35",
+      "band": "Angelus Apatrida",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 53,
+      "start": "15:05",
+      "end": "15:45",
+      "band": "Against The Waves",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 54,
+      "start": "16:25",
+      "end": "17:05",
+      "band": "Party Cannon",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 55,
+      "start": "17:50",
+      "end": "18:40",
+      "band": "Unprocessed",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 56,
+      "start": "19:30",
+      "end": "20:30",
+      "band": "Soen",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 57,
+      "start": "21:45",
+      "end": "22:45",
+      "band": "Crucified Barbara",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 58,
+      "start": "00:20",
+      "end": "01:20",
+      "band": "Stesy",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 59,
+      "start": "15:45",
+      "end": "16:25",
+      "band": "Prom Kinks",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 60,
+      "start": "17:05",
+      "end": "17:50",
+      "band": "Blackgold",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 61,
+      "start": "18:40",
+      "end": "19:30",
+      "band": "Sound of Silence",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 62,
+      "start": "20:10",
+      "end": "21:10",
+      "band": "Anal Hard",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 63,
+      "start": "21:50",
+      "end": "22:50",
+      "band": "Lake Malice",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 64,
+      "start": "23:30",
+      "end": "00:20",
+      "band": "Desolated",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 65,
+      "start": "01:25",
+      "end": "02:35",
+      "band": "Ignite",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 66,
+      "start": "15:05",
+      "end": "15:40",
+      "band": "Your Knife My Back",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 67,
+      "start": "16:20",
+      "end": "17:05",
+      "band": "Moonshine Wagon",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 68,
+      "start": "17:45",
+      "end": "18:35",
+      "band": "Datcha Mandala",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 69,
+      "start": "19:15",
+      "end": "20:05",
+      "band": "Slow Crush",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 70,
+      "start": "20:45",
+      "end": "21:45",
+      "band": "Tabernis",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 71,
+      "start": "22:40",
+      "end": "23:40",
+      "band": "Derby Motoreta’s Burrito Kachimba",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 72,
+      "start": "00:20",
+      "end": "01:30",
+      "band": "Harakiri For The Sky",
+      "stage": "desert",
+      "likes": []
+    }
+  ],
+  "saturday": [
+    {
+      "index": 73,
+      "start": "16:10",
+      "end": "16:50",
+      "band": "Gutalax",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 74,
+      "start": "17:35",
+      "end": "18:20",
+      "band": "Tetrarch",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 75,
+      "start": "19:10",
+      "end": "19:55",
+      "band": "Aviana",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 76,
+      "start": "20:45",
+      "end": "21:45",
+      "band": "Crossfaith",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 77,
+      "start": "23:00",
+      "end": "00:30",
+      "band": "Slipknot",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 78,
+      "start": "01:45",
+      "end": "03:00",
+      "band": "Skindred",
+      "stage": "main",
+      "likes": []
+    },
+    {
+      "index": 79,
+      "start": "15:35",
+      "end": "16:10",
+      "band": "Our Natural Killer",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 80,
+      "start": "16:50",
+      "end": "17:35",
+      "band": "The Broken Horizon",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 81,
+      "start": "18:20",
+      "end": "19:10",
+      "band": "Mental Cruelty",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 82,
+      "start": "19:55",
+      "end": "20:45",
+      "band": "Spectral Wound",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 83,
+      "start": "21:45",
+      "end": "22:45",
+      "band": "Vader",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 84,
+      "start": "00:45",
+      "end": "01:45",
+      "band": "Zeal & Ardor",
+      "stage": "ritual",
+      "likes": []
+    },
+    {
+      "index": 85,
+      "start": "15:35",
+      "end": "16:15",
+      "band": "Archivo Adxunto",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 86,
+      "start": "16:50",
+      "end": "17:40",
+      "band": "Pintglass",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 87,
+      "start": "18:20",
+      "end": "19:10",
+      "band": "Iscream Never Ground",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 88,
+      "start": "19:55",
+      "end": "20:45",
+      "band": "Split Chain",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 89,
+      "start": "21:40",
+      "end": "22:50",
+      "band": "Walls of Jericho",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 90,
+      "start": "23:30",
+      "end": "00:30",
+      "band": "Siamese",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 91,
+      "start": "01:20",
+      "end": "02:20",
+      "band": "ten56.",
+      "stage": "chaos",
+      "likes": []
+    },
+    {
+      "index": 92,
+      "start": "16:10",
+      "end": "16:50",
+      "band": "Saturna",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 93,
+      "start": "17:30",
+      "end": "18:20",
+      "band": "Dirty Sound Magnet",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 94,
+      "start": "19:05",
+      "end": "19:50",
+      "band": "Slomosa",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 95,
+      "start": "20:35",
+      "end": "21:45",
+      "band": "Russian Circles",
+      "stage": "desert",
+      "likes": []
+    },
+    {
+      "index": 96,
+      "start": "23:00",
+      "end": "00:00",
+      "band": "And So I Watch You From Afar",
+      "stage": "desert",
+      "likes": []
+    }
+  ]
+}

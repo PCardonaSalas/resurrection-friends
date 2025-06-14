@@ -1,0 +1,21 @@
+---
+import S from "./Menu.module.css";
+import { DAYS as days } from "../../const/days.js";
+const { day } = Astro.props;
+const activeClass = `${S["-active"]}`;
+---
+
+<ul class={S.menu}>
+  {
+    days.map(({ id, text }) => (
+      <li class={S._item}>
+        <a
+          class={`${S._link} ${day === id ? activeClass : ""}`}
+          href={`./${id}`}
+        >
+          {text}
+        </a>
+      </li>
+    ))
+  }
+</ul>

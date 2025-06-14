@@ -1,0 +1,19 @@
+.users {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 12px;
+
+    figure {
+        margin: 0;
+    }
+
+    img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+
+        object-fit: cover;
+        color: white;
+    }
+}

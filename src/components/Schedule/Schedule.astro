@@ -1,0 +1,32 @@
+---
+import { STAGES as stages } from "../../const/stages.js";
+import { HOURS as hours } from "../../const/hours.js";
+import Stage from "../Stage/Stage.astro";
+import Time from "../Time/Time.astro";
+import Card from "../Card/Card.astro";
+import Dialog from "../Dialog/Dialog.astro";
+import S from "./Schedule.module.css";
+
+const { day, data } = Astro.props;
+---
+
+<main class={`${S.schedule} ${S[day]}`}>
+  {stages.map((stage) => <Stage stage={stage} />)}
+  <Time modifier="-head" value="Stages" />
+  {hours.map((hour, i) => <Time modifier={`-t${i + 1}`} value={hour} />)}
+  {
+    data.map(({ index, band, stage, start, end }) => (
+      <Card
+        index={index}
+        day={day}
+        band={band}
+        stage={stage}
+        start={start}
+        end={end}
+        modifier={S[`-g-${index}`]}
+      />
+    ))
+  }
+</main>
+
+<Dialog />

@@ -1,0 +1,15 @@
+---
+import { FRIDAY } from "../const/friday.js";
+import Schedule from "../components/Schedule/Schedule.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout day="friday">
+  <Schedule day="friday" data={FRIDAY} />
+</Layout>
+
+<script>
+  import { FRIDAY } from "../const/friday";
+
+  localStorage.setItem("friday", JSON.stringify(FRIDAY));
+</script>
