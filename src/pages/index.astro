@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 <script>
   // Redirige a /wednesday si ya hay usuario en localStorage
   if (localStorage.getItem("user")) {
-    const basePath = document.documentElement.dataset.base || '';
+    const basePath = '';
     window.location.replace(`${basePath}/wednesday`);
   }
 </script>

@@ -1,14 +1,12 @@
 ---
 import S from "./Header.module.css";
 import Menu from "../Menu/Menu.astro";
-import Image from "../Image/Image.astro";
 const { day, hideUserAvatar } = Astro.props;
 const hiddenClass = hideUserAvatar ? "-hidden" : "";
-const basePath = document.documentElement.dataset.base || '';
 ---
 
 <header class={S.header}>
-  <Image class={S._image} src={`${basePath}/img/logo.png`} alt="Logo" />
+  <img class={S._image} src="/public/logo.png" />
   <span class=`_avatar ${hiddenClass}`>
     <user-avatar></user-avatar>
   </span>
@@ -16,13 +14,12 @@ const basePath = document.documentElement.dataset.base || '';
 </header>
 
 <script>
-  const basePath = document.documentElement.dataset.base || '';
   if (!customElements.get("user-avatar")) {
     class UserAvatar extends HTMLElement {
       connectedCallback() {
         const user = localStorage.getItem("user");
         if (user) {
-          this.innerHTML = `<img class="_user" width="120" height="120" alt="${user}" src="${basePath}/fotos/${user}.jpg" />`;
+          this.innerHTML = `<img class="_user" width="120" height="120" alt="${user}" src="/fotos/${user}.jpg" />`;
         } else {
           this.innerHTML = "";
         }

@@ -7,7 +7,7 @@ import Details from "../Details/Details.astro";
 import Link from "../Link/Link.astro";
 import Image from "../Image/Image.astro";
 import S from "./BandInfo.module.css";
-const basePath = document.documentElement.dataset.base || '';
+const basePath = '';
 ---
 
 <article class={`${S["band-info"]} ${S[`_${stage}`]}`} data-info={infoData}>
