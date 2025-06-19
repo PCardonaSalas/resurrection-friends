@@ -7,7 +7,6 @@ import Details from "../Details/Details.astro";
 import Link from "../Link/Link.astro";
 import Image from "../Image/Image.astro";
 import S from "./BandInfo.module.css";
-const basePath = '';
 ---
 
 <article class={`${S["band-info"]} ${S[`_${stage}`]}`} data-info={infoData}>
@@ -25,7 +24,7 @@ const basePath = '';
       href={spotify}
       target="_blank"
       >
-      <Image src={`${basePath}/img/spotify.png`} alt="Spotify" class={S._image} />
+      <Image src="/img/spotify.png" alt="Spotify" class={S._image} />
     </Link>
   </section>}
   {videos && (<section  class={S._videos}>
@@ -51,14 +50,14 @@ const basePath = '';
 </article>
 
 <script type="module">
-  const firebaseModule = await import(`${basePath}/utils/firebase.js`);
+  const firebaseModule = await import('/utils/firebase.js');
   const { initFireBase, getData, getOnce, updateData } = firebaseModule;
 
   const db = initFireBase();
   const currentUser = localStorage.getItem("user");
 
   if (!currentUser) {
-    window.location.href = `${basePath}/`;
+    window.location.href = "/";
   }
 
   const button = document.querySelector('[data-button="like"]');
@@ -83,7 +82,7 @@ const basePath = '';
             <p>Las siguientes personas quieren verlo:</p>
             ${likes
               .map(
-                (user) => `<img src="${basePath}/fotos/${user}.jpg" alt="${user}" title="${user}" class="like-avatar" />`
+                (user) => `<img src="/fotos/${user}.jpg" alt="${user}" title="${user}" class="like-avatar" />`
               )
               .join("")}
           `;
