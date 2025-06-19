@@ -3,12 +3,12 @@ import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
 const { day, hideUserAvatar } = Astro.props;
-
+console.log("Layout: " + hideUserAvatar);
 // Leer parámetro 'user' de la URL y el pathname
 let userFromParam = undefined;
 let pathname = undefined;
-if (typeof Astro !== 'undefined' && Astro.url) {
-  userFromParam = Astro.url.searchParams.get('user');
+if (typeof Astro !== "undefined" && Astro.url) {
+  userFromParam = Astro.url.searchParams.get("user");
   pathname = Astro.url.pathname;
 }
 ---
@@ -18,7 +18,11 @@ if (typeof Astro !== 'undefined' && Astro.url) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={`${import.meta.env.BASE_URL}/favicon.svg`}
+    />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
     <ClientRouter />
@@ -26,8 +30,7 @@ if (typeof Astro !== 'undefined' && Astro.url) {
   <body>
     <Header day={day} hideUserAvatar={hideUserAvatar} />
     <slot />
-    <Footer day={day} />
-    
+    <Footer day={day}  hideUserAvatar={hideUserAvatar} />
   </body>
 </html>
 
@@ -40,8 +43,11 @@ if (typeof Astro !== 'undefined' && Astro.url) {
 
   :global(:root) {
     interpolate-size: allow-keywords;
-  }
 
+    .-hidden {
+      display: none;
+    }
+  }
 
   html {
     min-width: min-content;

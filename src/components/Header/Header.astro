@@ -2,6 +2,7 @@
 import S from "./Header.module.css";
 import Menu from "../Menu/Menu.astro";
 const { day, hideUserAvatar } = Astro.props;
+console.log(hideUserAvatar)
 const hiddenClass = hideUserAvatar ? "-hidden" : "";
 ---
 
@@ -10,7 +11,7 @@ const hiddenClass = hideUserAvatar ? "-hidden" : "";
   <span class=`_avatar ${hiddenClass}`>
     <user-avatar></user-avatar>
   </span>
-  <Menu day={day} />
+  {!hideUserAvatar && <Menu day={day} />}
 </header>
 
 <script>

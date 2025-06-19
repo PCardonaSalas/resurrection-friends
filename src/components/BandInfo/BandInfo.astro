@@ -34,94 +34,20 @@ import S from "./BandInfo.module.css";
       ))
     }
   </section>)}
-  <button
-    class={S.likeButton}
-    data-index={index}
-    data-day={day}
-    id={`like-${index}`}
-    data-button="like"
-  >
-    ❤️ Like
-  </button>
-
-  <div class={S["_likes-container"]} data-container={index}>
-    
-  </div>
+  <band-info-likes data-index={index} data-day={day}>
+    <button
+      class={S.likeButton}
+      data-index={index}
+      data-day={day}
+      id={`like-${index}`}
+      data-button="like"
+    >
+      ❤️ Like
+    </button>
+    <div class={S["_likes-container"]} data-container={index}></div>
+  </band-info-likes>
 </article>
 
-<script type="module">
-  const firebaseModule = await import('/utils/firebase.js');
-  const { initFireBase, getData, getOnce, updateData } = firebaseModule;
-
-  const db = initFireBase();
-  const currentUser = localStorage.getItem("user");
-
-  if (!currentUser) {
-    window.location.href = "/";
-  }
-
-  const button = document.querySelector('[data-button="like"]');
-  if (button) {
-    let userHasLiked = false;
-    const index = button.dataset.index;
-    const day = button.dataset.day;
-    const path = `data/${day}`;
-    const likesContainer = document.querySelector(`[data-container="${index}"]`);
-
-    function updateLikeUI(likes) {
-      if (likes && likes.includes(currentUser)) {
-        button.textContent = "💔 Ya no quiero verlo";
-        userHasLiked = true;
-      } else {
-        button.textContent = "❤️ ¡Quiero verlo!";
-        userHasLiked = false;
-      }
-      if (likesContainer) {
-        if (likes && likes.length > 0) {
-          likesContainer.innerHTML = `
-            <p>Las siguientes personas quieren verlo:</p>
-            ${likes
-              .map(
-                (user) => `<img src="/fotos/${user}.jpg" alt="${user}" title="${user}" class="like-avatar" />`
-              )
-              .join("")}
-          `;
-        } else {
-          likesContainer.innerHTML = "";
-        }
-      }
-    }
-
-    // Escucha en tiempo real los cambios de likes SOLO para la UI
-    getData(db, path, (bandas) => {
-      const banda = bandas.find((b) => String(b.index) === String(index));
-      const likes = banda && banda.likes ? banda.likes : [];
-      updateLikeUI(likes);
-    });
-
-    button.addEventListener("click", async (e) => {
-      if (button.disabled) return;
-      button.disabled = true;
-      // Solo obtener una vez el estado actual antes de actualizar
-      await getOnce(db, path, async (bandas) => {
-        const banda = bandas.find((b) => String(b.index) === String(index));
-        if (!banda) return;
-        let likes = new Set(banda.likes || []);
-        const hadLike = likes.has(currentUser);
-        const updatePath = `${path}/${bandas.indexOf(banda)}`;
-        if (hadLike) {
-          likes.delete(currentUser);
-          if (likes.size === 0) {
-            await updateData(db, updatePath, { likes: null });
-          } else {
-            await updateData(db, updatePath, { likes: Array.from(likes) });
-          }
-        } else {
-          likes.add(currentUser);
-          await updateData(db, updatePath, { likes: Array.from(likes) });
-        }
-        button.disabled = false;
-      });
-    });
-  }
+<script type="module" is:inline>
+  import '/utils/band-info-likes.js';
 </script>
