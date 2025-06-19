@@ -51,7 +51,10 @@ import S from "./BandInfo.module.css";
 
 <script type="module">
   const basePath = document.documentElement.dataset.base || '';
-  import { initFireBase, getData, getOnce, updateData } from `${basePath}/utils/firebase.js`;
+  
+  // Cargamos Firebase dinámicamente
+  const firebaseModule = await import(`${basePath}/utils/firebase.js`);
+  const { initFireBase, getData, getOnce, updateData } = firebaseModule;
 
   const db = initFireBase();
   const currentUser = localStorage.getItem("user");
