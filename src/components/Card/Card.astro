@@ -10,7 +10,7 @@ const bandInfo = JSON.stringify({ index, day, stage, band, genre, start, end, vi
   class={`${S.card} ${S[stageClass]} ${modifier}`}
   data-info={bandInfo}
 >
-  <a href={`${import.meta.env.BASE_URL}/${day}/${encodeURIComponent(slug)}`} class={S.link} tabindex="0">
+  <a href={`/${encodeURIComponent(slug)}`} class={S.link} tabindex="0">
     <h2 transition:name={`band-${slug}`} class={S._band}>{band}</h2>
     <p transition:name={`hours-${slug}`} class={S._hours}><span>{start}</span> - <span>{end}</span></p>
   </a>
