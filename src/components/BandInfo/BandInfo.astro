@@ -7,6 +7,7 @@ import Details from "../Details/Details.astro";
 import Link from "../Link/Link.astro";
 import Image from "../Image/Image.astro";
 import S from "./BandInfo.module.css";
+const basePath = document.documentElement.dataset.base || '';
 ---
 
 <article class={`${S["band-info"]} ${S[`_${stage}`]}`} data-info={infoData}>
@@ -24,7 +25,7 @@ import S from "./BandInfo.module.css";
       href={spotify}
       target="_blank"
       >
-      <Image src="img/spotify.png" alt="Spotify" class={S._image} />
+      <Image src={`${basePath}/img/spotify.png`} alt="Spotify" class={S._image} />
     </Link>
   </section>}
   {videos && (<section  class={S._videos}>
@@ -50,9 +51,6 @@ import S from "./BandInfo.module.css";
 </article>
 
 <script type="module">
-  const basePath = document.documentElement.dataset.base || '';
-  
-  // Cargamos Firebase dinámicamente
   const firebaseModule = await import(`${basePath}/utils/firebase.js`);
   const { initFireBase, getData, getOnce, updateData } = firebaseModule;
 

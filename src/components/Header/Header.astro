@@ -4,10 +4,11 @@ import Menu from "../Menu/Menu.astro";
 import Image from "../Image/Image.astro";
 const { day, hideUserAvatar } = Astro.props;
 const hiddenClass = hideUserAvatar ? "-hidden" : "";
+const basePath = document.documentElement.dataset.base || '';
 ---
 
 <header class={S.header}>
-  <Image class={S._image} src="/img/logo.png" alt="Logo" />
+  <Image class={S._image} src={`${basePath}/img/logo.png`} alt="Logo" />
   <span class=`_avatar ${hiddenClass}`>
     <user-avatar></user-avatar>
   </span>
@@ -16,7 +17,6 @@ const hiddenClass = hideUserAvatar ? "-hidden" : "";
 
 <script>
   const basePath = document.documentElement.dataset.base || '';
-  
   if (!customElements.get("user-avatar")) {
     class UserAvatar extends HTMLElement {
       connectedCallback() {

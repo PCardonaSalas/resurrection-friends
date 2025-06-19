@@ -2,12 +2,13 @@
 import S from "./Users.module.css";
 import { USERS } from "../../const/users.js";
 import Image from "../Image/Image.astro";
+const basePath = document.documentElement.dataset.base || '';
 ---
 
 <section id="usuarios-container" class={S.users}>
   {USERS.map((usuario) => (
     <figure>
-      <Image src={`/fotos/${usuario.nombre}.jpg`} alt={usuario.nombre} id={usuario.nombre} class="user-avatar" />
+      <Image src={`${basePath}/fotos/${usuario.nombre}.jpg`} alt={usuario.nombre} id={usuario.nombre} class="user-avatar" />
     </figure>
   ))}
 </section>
@@ -18,7 +19,6 @@ import Image from "../Image/Image.astro";
     const img = e.target.closest("img.user-avatar");
     if (img) {
       localStorage.setItem("user", img.id);
-      const basePath = document.documentElement.dataset.base || '';
       window.location.replace(`${basePath}/wednesday`);
     }
   });

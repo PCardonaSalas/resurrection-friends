@@ -3,9 +3,10 @@ import S from "./Footer.module.css";
 import Menu from "../Menu/Menu.astro";
 import Image from "../Image/Image.astro";
 const { day } = Astro.props;
+const basePath = document.documentElement.dataset.base || '';
 ---
 
 <footer class={S.footer}>
   <Menu day={day} />
-  <Image class={S._image} src="/img/mini-logo.png" alt="Mini logo" />
+  <Image class={S._image} src={`${basePath}/img/mini-logo.png`} alt="Mini logo" />
 </footer>
