@@ -12,6 +12,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write
 
 jobs:
   build:
@@ -28,10 +29,10 @@ jobs:
           
       - name: Install dependencies
         run: npm install
-        
-      - name: Build
+          - name: Build
         run: npm run build
-          - name: Upload Pages artifact
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
@@ -47,4 +48,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
+        uses: actions/deploy-pages@v4
         uses: actions/deploy-pages@v4

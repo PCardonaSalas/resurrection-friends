@@ -9,5 +9,6 @@ export default defineConfig({
   },
   base: '/resurrection-friends',
   output: 'static',
-  site: 'https://PCardonaSalas.github.io'
+  site: 'https://PCardonaSalas.github.io',
+  trailingSlash: 'always' // Esto ayuda con la compatibilidad de GitHub Pages
 });
