@@ -1,10 +1,12 @@
-import { initFireBase, getOnce, updateData } from "/utils/firebase.js";
+const BASE_URL = document.documentElement.dataset.base || '';
+
+import { initFireBase, getOnce, updateData } from `${BASE_URL}/utils/firebase.js`;
 
 const db = initFireBase();
 const currentUser = localStorage.getItem("user");
 
-if (!currentUser && window.location.pathname !== "/") {
-  window.location.href = "/";
+if (!currentUser && window.location.pathname !== `${BASE_URL}/`) {
+  window.location.href = `${BASE_URL}/`;
 }
 
 document.addEventListener("click", (e) => {

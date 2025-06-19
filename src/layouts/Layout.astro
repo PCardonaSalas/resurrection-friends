@@ -14,7 +14,7 @@ if (typeof Astro !== 'undefined' && Astro.url) {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-base={import.meta.env.BASE_URL}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />

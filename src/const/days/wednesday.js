@@ -170,7 +170,7 @@ export const WEDNESDAY = [
     end: "17:25",
     band: "letlive.",
     stage: "chaos",
-    slug: "letlive.",
+    slug: "letlive",
     genre: "Post-Hardcore",
     spotify: "https://open.spotify.com/artist/5ACBALsFxT5Ab3gVe8yyPs",
     videos: [

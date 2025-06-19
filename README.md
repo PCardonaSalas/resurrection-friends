@@ -1,4 +1,6 @@
-# Astro Starter Kit: Basics
+# Resurrection Friends
+
+Una aplicación web para gestionar los horarios y bandas del festival Resurrection Fest.
 
 ```sh
 npm create astro@latest -- --template basics

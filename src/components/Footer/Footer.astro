@@ -1,10 +1,11 @@
 ---
 import S from "./Footer.module.css";
 import Menu from "../Menu/Menu.astro";
+import Image from "../Image/Image.astro";
 const { day } = Astro.props;
 ---
 
 <footer class={S.footer}>
   <Menu day={day} />
-  <img class={S._image} src="/public/mini-logo.png" />
+  <Image class={S._image} src="/img/mini-logo.png" alt="Mini logo" />
 </footer>
