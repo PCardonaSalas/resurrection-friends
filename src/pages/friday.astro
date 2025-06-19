@@ -1,5 +1,5 @@
 ---
-import { FRIDAY } from "../const/friday.js";
+import { FRIDAY } from "../const/days/friday.js";
 import Schedule from "../components/Schedule/Schedule.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script>
-  import { FRIDAY } from "../const/friday";
-
-  localStorage.setItem("friday", JSON.stringify(FRIDAY));
+  if (!localStorage.getItem("user")) {
+    window.location.href = "/";
+  }
 </script>

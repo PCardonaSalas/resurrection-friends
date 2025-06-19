@@ -1,0 +1,9 @@
+---
+import S from "./Link.module.css";
+const { href, target = "self", text, modifier } = Astro.props;
+---
+
+<a class=`${S.link} ${S[modifier]}` href={href} target={target} tabindex="0">
+  {text ? text : ""}
+  <slot />
+</a>

@@ -1,5 +1,5 @@
 ---
-import { WEDNESDAY } from "../const/wednesday.js";
+import { WEDNESDAY } from "../const/days/wednesday.js";
 import Schedule from "../components/Schedule/Schedule.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -7,3 +7,9 @@ import Layout from "../layouts/Layout.astro";
 <Layout day="wednesday">
   <Schedule day="wednesday" data={WEDNESDAY} />
 </Layout>
+
+<script>
+  if (!localStorage.getItem("user")) {
+    window.location.href = "/";
+  }
+</script>

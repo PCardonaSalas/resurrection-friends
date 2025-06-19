@@ -1,0 +1,11 @@
+---
+const { id } = Astro.props;
+import S from "./Video.module.css";
+---
+
+<!-- Carga el script solo en el cliente -->
+<script type="module" is:inline>
+  import 'https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@0.4.0/lite-youtube.js';
+</script>
+
+<lite-youtube videoid={id} class={S.video}></lite-youtube>

@@ -1,0 +1,44 @@
+---
+// @ts-nocheck
+import { DATA } from "../../const/data.js";
+import Layout from "../../layouts/Layout.astro";
+import BandInfo from "../../components/BandInfo/BandInfo.astro";
+
+// Generar todas las rutas posibles
+export async function getStaticPaths() {
+  const paths = [];
+  for (const day in DATA) {
+      for (const band of DATA[day]) {
+        const {slug} = band;
+      paths.push({
+        params: {
+          day,
+          band: slug,
+        },
+        props: {
+          bandData: {...band, day},
+          day,
+        },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { bandData, day } = Astro.props;
+---
+
+<script>
+  if (!localStorage.getItem("user")) {
+    window.location.href = "/";
+  }
+</script>
+
+<Layout>
+  <BandInfo
+    info={bandData}
+
+    />
+</Layout>
+

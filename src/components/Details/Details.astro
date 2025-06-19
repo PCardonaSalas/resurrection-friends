@@ -1,0 +1,15 @@
+---
+import S from "./Details.module.css";
+import Video from "../Video/Video.astro";
+
+const { id, title } = Astro.props;
+---
+
+<details class={S.details}>
+    <summary>
+        <span class={S._title}>{title}</span>
+    </summary>
+    <article class={S._video}>
+        <Video id={id} title={title} />
+    </article>
+</details>

@@ -1,6 +1,6 @@
 ---
 import S from "./Menu.module.css";
-import { DAYS as days } from "../../const/days.js";
+import { DAYS as days } from "../../const/common/days.js";
 const { day } = Astro.props;
 const activeClass = `${S["-active"]}`;
 ---
@@ -11,7 +11,7 @@ const activeClass = `${S["-active"]}`;
       <li class={S._item}>
         <a
           class={`${S._link} ${day === id ? activeClass : ""}`}
-          href={`./${id}`}
+          href={`/${id}`}
         >
           {text}
         </a>

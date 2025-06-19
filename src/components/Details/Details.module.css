@@ -1,0 +1,29 @@
+.details {
+    overflow: hidden;
+
+    
+    & > summary {
+        display: list-item;
+        cursor: pointer;
+        font-weight: 600;
+        text-align: center;
+        margin-block-end: 16px;
+        
+        &::marker {
+            content: none
+        }
+    }
+
+    &::details-content {
+        block-size: 0;
+        transition: block-size 1s, content-visibility 1s;
+        transition-behavior: allow-discrete;
+        
+    }
+
+    &[open] {
+        &::details-content {
+            block-size: auto;
+        }
+  }
+}

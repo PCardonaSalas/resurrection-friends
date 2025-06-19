@@ -1,9 +1,8 @@
 ---
-import BandInfo from "../BandInfo/BandInfo.astro";
 import S from "./Card.module.css";
-const { index, day, stage, band, start, end, modifier } = Astro.props;
+const { index, slug, day, stage, band, genre, start, end, videos, modifier } = Astro.props;
 const stageClass = `-${stage}`;
-const bandInfo = JSON.stringify({ index, day, stage, band, start, end });
+const bandInfo = JSON.stringify({ index, day, stage, band, genre, start, end, videos });
 ---
 
 <article
@@ -11,28 +10,9 @@ const bandInfo = JSON.stringify({ index, day, stage, band, start, end });
   class={`${S.card} ${S[stageClass]} ${modifier}`}
   data-info={bandInfo}
 >
-  <button class="js-open-dialog">
-    <h2 class={S._band}>{band}</h2>
-    <p class={S._hours}><span>{start}</span> - <span>{end}</span></p>
-  </button>
-
-  <!-- Componente oculto -->
-  <div class=`js-bandinfo ${S.hidden}` data-for-index={index}>
-    <BandInfo info={{ index, day, band, stage, start, end }} />
-  </div>
+  <a href={`/${day}/${encodeURIComponent(slug)}`} class={S.link} tabindex="0">
+    <h2 transition:name={`band-${slug}`} class={S._band}>{band}</h2>
+    <p transition:name={`hours-${slug}`} class={S._hours}><span>{start}</span> - <span>{end}</span></p>
+  </a>
 </article>
-<script>
-  document.querySelectorAll(".js-open-dialog").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const article = e.currentTarget.closest("article");
-      const infoBox = article.querySelector(".js-bandinfo");
-      const html = infoBox?.innerHTML || "<p>Error al cargar información.</p>";
 
-      const event = new CustomEvent("open-modal", {
-        detail: { html },
-      });
-
-      window.dispatchEvent(event);
-    });
-  });
-</script>

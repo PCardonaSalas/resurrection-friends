@@ -3,7 +3,7 @@ import { initFireBase, getOnce, updateData } from "/utils/firebase.js";
 const db = initFireBase();
 const currentUser = localStorage.getItem("user");
 
-if (!currentUser) {
+if (!currentUser && window.location.pathname !== "/") {
   window.location.href = "/";
 }
 
@@ -34,7 +34,7 @@ document.addEventListener("click", (e) => {
       likesContainer.innerHTML = "";
       Array.from(likes).forEach((user) => {
         const img = document.createElement("img");
-        img.src = `/fotos/${user}.jpeg`;
+        img.src = `/fotos/${user}.jpg`;
         img.alt = user;
         img.title = user;
         img.className = "like-avatar";

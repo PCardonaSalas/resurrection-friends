@@ -1,7 +1,16 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
-const { day } = Astro.props;
+const { day, hideUserAvatar } = Astro.props;
+
+// Leer parámetro 'user' de la URL y el pathname
+let userFromParam = undefined;
+let pathname = undefined;
+if (typeof Astro !== 'undefined' && Astro.url) {
+  userFromParam = Astro.url.searchParams.get('user');
+  pathname = Astro.url.pathname;
+}
 ---
 
 <!doctype html>
@@ -12,12 +21,13 @@ const { day } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
+    <ClientRouter />
   </head>
   <body>
-    <Header day={day} />
+    <Header day={day} hideUserAvatar={hideUserAvatar} />
     <slot />
     <Footer day={day} />
-    <script type="module" src="/utils/register-like-events.js"></script>
+    
   </body>
 </html>
 
@@ -27,6 +37,11 @@ const { day } = Astro.props;
   :global(*::after) {
     box-sizing: border-box;
   }
+
+  :global(:root) {
+    interpolate-size: allow-keywords;
+  }
+
 
   html {
     min-width: min-content;

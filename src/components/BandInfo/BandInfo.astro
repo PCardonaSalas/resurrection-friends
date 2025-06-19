@@ -1,18 +1,38 @@
 ---
+// @ts-nocheck
 const { info } = Astro.props;
-const { index, day, band, stage, start, end } = info;
+const { index, slug, day, band, genre, stage, start, end, spotify, videos } = info;
 const infoData = JSON.stringify(info);
+import Details from "../Details/Details.astro";
+import Link from "../Link/Link.astro";
 import S from "./BandInfo.module.css";
 ---
 
-<article class={S["band-info"]} data-info={infoData}>
-  <h2 data-index={index} class={S._band}>{band}</h2>
-  <section>
-    <p>Tocan en el escenario: <strong>{stage}</strong></p>
+<article class={`${S["band-info"]} ${S[`_${stage}`]}`} data-info={infoData}>
+  <h2 transition:name={`band-${slug}`} data-index={index} class={S._band}>{band}</h2>
+  <h3 class={S["_info-title"]}>Día <span class={S._day}>{day}</span></h1>
+  <h3 class={S["_info-title"]}>Genero musical: <strong class={S._genre}>{genre}</strong></h3>
+  <section class={S["_info-title"]}>
+    <p transition:name={`hours-${slug}`}>Tocan en el escenario: <strong class={S._stage}>{stage}</strong></p>
   </section>
-  <section>
-    <p>{start} - {end}</p>
+  <section class={S._time}>
+    <p>Hora <span>{start} - {end}</span></p>
   </section>
+  {spotify && spotify !== "#" && <section class={S._spotify}>
+    <Link
+      href={spotify}
+      target="_blank"
+      >
+      <img src="/public/spotify.png" alt="Spotify" class={S._image} />
+    </Link>
+  </section>}
+  {videos && (<section  class={S._videos}>
+    {
+      videos.map(({ id, title }) => (
+        id && <Details id={id} title={title} />
+      ))
+    }
+  </section>)}
   <button
     class={S.likeButton}
     data-index={index}
@@ -23,11 +43,13 @@ import S from "./BandInfo.module.css";
     ❤️ Like
   </button>
 
-  <div class="likes-container" data-container={index}></div>
+  <div class={S["_likes-container"]} data-container={index}>
+    
+  </div>
 </article>
 
-<!-- <script type="module">
-  import { initFireBase, getOnce, updateData } from "/utils/firebase.js";
+<script type="module">
+  import { initFireBase, getData, getOnce, updateData } from "/utils/firebase.js";
 
   const db = initFireBase();
   const currentUser = localStorage.getItem("user");
@@ -36,49 +58,68 @@ import S from "./BandInfo.module.css";
     window.location.href = "/";
   }
 
-  const buttons = document.querySelectorAll('[data-button="like"]');
-  if (buttons.length > 0)
-    buttons.forEach((button) => {
-      debugger;
-      if (button)
-        button.addEventListener("click", (e) => {
-          debugger;
-          const btn = e.target.closest(".likeButton");
-          if (!btn) return;
+  const button = document.querySelector('[data-button="like"]');
+  if (button) {
+    let userHasLiked = false;
+    const index = button.dataset.index;
+    const day = button.dataset.day;
+    const path = `data/${day}`;
+    const likesContainer = document.querySelector(`[data-container="${index}"]`);
 
-          const index = btn.dataset.index;
-          const day = btn.dataset.day;
-          const path = `data/${day}`;
+    function updateLikeUI(likes) {
+      if (likes && likes.includes(currentUser)) {
+        button.textContent = "💔 Ya no quiero verlo";
+        userHasLiked = true;
+      } else {
+        button.textContent = "❤️ ¡Quiero verlo!";
+        userHasLiked = false;
+      }
+      if (likesContainer) {
+        if (likes && likes.length > 0) {
+          likesContainer.innerHTML = `
+            <p>Las siguientes personas quieren verlo:</p>
+            ${likes
+              .map(
+                (user) => `<img src="/fotos/${user}.jpg" alt="${user}" title="${user}" class="like-avatar" />`
+              )
+              .join("")}
+          `;
+        } else {
+          likesContainer.innerHTML = "";
+        }
+      }
+    }
 
-          const likesContainer = document.querySelector(
-            `[data-container="${index}"]`
-          );
-
-          getOnce(db, path, async (bandas) => {
-            const banda = bandas.find((b) => b.index == index);
-            if (!banda) return;
-
-            const likes = new Set([...(banda.likes || []), currentUser]);
-            const updatePath = `${path}/${bandas.indexOf(banda)}`;
-
-            await updateData(db, updatePath, { likes: Array.from(likes) });
-
-            // Actualizar UI
-            btn.textContent = "✅ Liked";
-            btn.disabled = true;
-
-            if (likesContainer) {
-              likesContainer.innerHTML = "";
-              Array.from(likes).forEach((user) => {
-                const img = document.createElement("img");
-                img.src = `/fotos/${user}.jpeg`;
-                img.alt = user;
-                img.title = user;
-                img.className = "like-avatar";
-                likesContainer.appendChild(img);
-              });
-            }
-          });
-        });
+    // Escucha en tiempo real los cambios de likes SOLO para la UI
+    getData(db, path, (bandas) => {
+      const banda = bandas.find((b) => String(b.index) === String(index));
+      const likes = banda && banda.likes ? banda.likes : [];
+      updateLikeUI(likes);
     });
-</script> -->
+
+    button.addEventListener("click", async (e) => {
+      if (button.disabled) return;
+      button.disabled = true;
+      // Solo obtener una vez el estado actual antes de actualizar
+      await getOnce(db, path, async (bandas) => {
+        const banda = bandas.find((b) => String(b.index) === String(index));
+        if (!banda) return;
+        let likes = new Set(banda.likes || []);
+        const hadLike = likes.has(currentUser);
+        const updatePath = `${path}/${bandas.indexOf(banda)}`;
+        if (hadLike) {
+          likes.delete(currentUser);
+          if (likes.size === 0) {
+            await updateData(db, updatePath, { likes: null });
+          } else {
+            await updateData(db, updatePath, { likes: Array.from(likes) });
+          }
+        } else {
+          likes.add(currentUser);
+          await updateData(db, updatePath, { likes: Array.from(likes) });
+        }
+        button.disabled = false;
+      });
+    });
+  }
+</script>

@@ -1,10 +1,30 @@
 ---
 import S from "./Header.module.css";
 import Menu from "../Menu/Menu.astro";
-const { day } = Astro.props;
+const { day, hideUserAvatar } = Astro.props;
+const hiddenClass = hideUserAvatar ? "-hidden" : "";
 ---
 
 <header class={S.header}>
   <img class={S._image} src="/public/logo.png" />
+  <span class=`_avatar ${hiddenClass}`>
+    <user-avatar></user-avatar>
+  </span>
   <Menu day={day} />
 </header>
+
+<script>
+  if (!customElements.get("user-avatar")) {
+    class UserAvatar extends HTMLElement {
+      connectedCallback() {
+        const user = localStorage.getItem("user");
+        if (user) {
+          this.innerHTML = `<img class="_user" width="120" height="120" alt="${user}" src="/fotos/${user}.jpg" />`;
+        } else {
+          this.innerHTML = "";
+        }
+      }
+    }
+    customElements.define("user-avatar", UserAvatar);
+  }
+</script>

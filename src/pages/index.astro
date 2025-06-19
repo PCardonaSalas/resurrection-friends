@@ -2,7 +2,13 @@
 import Users from "../components/Users/Users.astro";
 import Layout from "../layouts/Layout.astro";
 ---
+<script>
+  // Redirige a /wednesday si ya hay usuario en localStorage
+  if (localStorage.getItem("user")) {
+    window.location.replace("/wednesday");
+  }
+</script>
 
-<Layout>
+<Layout hideUserAvatar="true">
   <Users />
 </Layout>
