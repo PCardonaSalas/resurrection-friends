@@ -2,13 +2,12 @@
 import S from "./Users.module.css";
 import { USERS } from "../../const/users.js";
 import Image from "../Image/Image.astro";
-const basePath = '';
 ---
 
 <section id="usuarios-container" class={S.users}>
   {USERS.map((usuario) => (
     <figure>
-      <Image src={`${basePath}/fotos/${usuario.nombre}.jpg`} alt={usuario.nombre} id={usuario.nombre} class="user-avatar" />
+      <Image src={`/fotos/${usuario.nombre}.jpg`} alt={usuario.nombre} id={usuario.nombre} class="user-avatar" />
     </figure>
   ))}
 </section>
@@ -19,7 +18,7 @@ const basePath = '';
     const img = e.target.closest("img.user-avatar");
     if (img) {
       localStorage.setItem("user", img.id);
-      window.location.replace(`${basePath}/wednesday`);
+      window.location.replace(`/wednesday`);
     }
   });
 </script>
