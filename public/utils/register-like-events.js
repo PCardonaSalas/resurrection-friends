@@ -1,18 +1,16 @@
+import { initFireBase, getOnce, updateData } from '/utils/firebase.js';
+
 const BASE_URL = document.documentElement.dataset.base || '';
-
-import { initFireBase, getOnce, updateData } from `${BASE_URL}/utils/firebase.js`;
-
 const db = initFireBase();
 const currentUser = localStorage.getItem("user");
 
-if (!currentUser && window.location.pathname !== `${BASE_URL}/`) {
+if (!currentUser && !window.location.pathname.endsWith('/')) {
   window.location.href = `${BASE_URL}/`;
 }
 
 document.addEventListener("click", (e) => {
   const btn = e.target.closest('[data-button="like"]');
   if (!btn) return;
-  debugger;
   const index = btn.dataset.index;
   const day = btn.dataset.day;
   const path = `data/${day}`;
@@ -36,7 +34,7 @@ document.addEventListener("click", (e) => {
       likesContainer.innerHTML = "";
       Array.from(likes).forEach((user) => {
         const img = document.createElement("img");
-        img.src = `/fotos/${user}.jpg`;
+        img.src = `${BASE_URL}/fotos/${user}.jpg`;
         img.alt = user;
         img.title = user;
         img.className = "like-avatar";
