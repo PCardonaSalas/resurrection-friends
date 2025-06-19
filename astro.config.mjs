@@ -4,6 +4,5 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  base: '',
-  site: 'https://pcardonasalas.github.io'
+  site: 'https://resurrection-friends.netlify.app'
 });
